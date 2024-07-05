@@ -1,12 +1,12 @@
 import express from "express";
+import { route } from "../route/v1/page_main.mjs";
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("hello word ");
-});
+app.use("/api/v1/users",route);
+
 
 app.listen(port, () => {
-  console.log("server is power");
+  console.log(`http://localhost:${port}`);
 });
